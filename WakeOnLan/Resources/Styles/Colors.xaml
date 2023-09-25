@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Color x:Key="ShellBackgroundLight">#512bd4</Color>
+    <SolidColorBrush x:Key="ShellBackgroundLightBrush" Color="{StaticResource ShellBackgroundLight}" />
+
+    <Color x:Key="ShellBackgroundDark">#141414</Color>
+    <SolidColorBrush x:Key="ShellBackgroundDarkBrush" Color="{StaticResource ShellBackgroundDark}" />
+
+    <Color x:Key="ShellTextLight">White</Color>
+    <SolidColorBrush x:Key="ShellTextLightBrush" Color="{StaticResource ShellTextLight}" />
+
+    <Color x:Key="ShellTextDark">White</Color>
+    <SolidColorBrush x:Key="ShellTextDarkBrush" Color="{StaticResource ShellTextDark}" />
+
+    <Color x:Key="BackgroundLight">#d2d3db</Color>
+    <SolidColorBrush x:Key="BackgroundLightBrush" Color="{StaticResource BackgroundLight}" />
+
+    <Color x:Key="BackgroundDark">Black</Color>
+    <SolidColorBrush x:Key="BackgroundDarkBrush" Color="{StaticResource BackgroundDark}" />
+
+    <Color x:Key="BlockLight">#fafafa</Color>
+    <SolidColorBrush x:Key="BlockLightBrush" Color="{StaticResource BlockLight}" />
+
+    <Color x:Key="BlockDark">#1e2124</Color>
+    <SolidColorBrush x:Key="BlockDarkBrush" Color="{StaticResource BlockDark}" />
+
+    <Color x:Key="PrimaryTextLight">#484b6a</Color>
+    <SolidColorBrush x:Key="PrimaryTextLightBrush" Color="{StaticResource PrimaryTextLight}" />
+
+    <Color x:Key="PrimaryTextDark">White</Color>
+    <SolidColorBrush x:Key="PrimaryTextDarkBrush" Color="{StaticResource PrimaryTextDark}" />
+
+    <Color x:Key="SecondaryTextLight">#9394a5</Color>
+    <SolidColorBrush x:Key="SecondaryTextLightBrush" Color="{StaticResource SecondaryTextLight}" />
+
+    <Color x:Key="SecondaryTextDark">#008080</Color>
+    <SolidColorBrush x:Key="SecondaryTextDarkBrush" Color="{StaticResource SecondaryTextDark}" />
+
+</ResourceDictionary>

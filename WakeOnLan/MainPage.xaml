@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WakeOnLan.MainPage"              
+             Title="Wake on LAN"
+             Style="{StaticResource Page}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="+" />
+    </ContentPage.ToolbarItems>
+
+    <Grid x:Name="DevicesView">
+        <CollectionView Margin="5,10" ItemsSource="{Binding Devices}">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Style="{StaticResource Block}">
+
+                        <Grid ColumnDefinitions="*,*" Style="{StaticResource BlockGrid}">
+                            <VerticalStackLayout Grid.Column="0" Style="{StaticResource BlockVertStack}">
+                                <Label Text="{Binding Name}" HorizontalOptions="Start" Style="{StaticResource PrimaryText}"/>
+
+                                <HorizontalStackLayout>
+                                    <Label Text="{Binding IP}" HorizontalOptions="Start" Style="{StaticResource SecondaryText}" />
+                                    <Label Text=" : " HorizontalOptions="Start" Style="{StaticResource SecondaryText}" />
+                                    <Label Text="{Binding Port}" HorizontalOptions="Start" Style="{StaticResource SecondaryText}" />
+                                </HorizontalStackLayout>
+
+                                <Label Text="{Binding MAC}" HorizontalOptions="Start" Style="{StaticResource SecondaryText}" />
+                            </VerticalStackLayout>
+
+                            <Button Text="ON" HorizontalOptions="End" Grid.Column="1" Style="{StaticResource OnButton}"/>
+
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+    </Grid>
+
+</ContentPage>

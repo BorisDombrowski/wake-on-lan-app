@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Style x:Key="Shell" TargetType="Shell" ApplyToDerivedTypes="True">
+        <Setter Property="Shell.BackgroundColor" Value="{AppThemeBinding Light={StaticResource ShellBackgroundLight}, Dark={StaticResource ShellBackgroundDark}}" />
+        <Setter Property="Shell.ForegroundColor" Value="{OnPlatform WinUI={StaticResource ShellBackgroundLight}, Default=White}" />
+        <Setter Property="Shell.TitleColor" Value="{AppThemeBinding Light={StaticResource ShellTextLight}, Dark={StaticResource ShellTextDark}}" />
+        <Setter Property="Shell.NavBarHasShadow" Value="False" />
+        <Setter Property="Shell.TabBarBackgroundColor" Value="{AppThemeBinding Light={StaticResource ShellBackgroundLight}, Dark={StaticResource ShellBackgroundDark}}" />
+        <Setter Property="Shell.TabBarForegroundColor" Value="{AppThemeBinding Light={StaticResource ShellBackgroundLight}, Dark={StaticResource ShellBackgroundDark}}" />
+        <Setter Property="Shell.TabBarTitleColor" Value="{AppThemeBinding Light={StaticResource ShellTextLight}, Dark={StaticResource ShellTextDark}}" />
+    </Style>
+
+    <Style x:Key="Page" TargetType="ContentPage" ApplyToDerivedTypes="True">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource BackgroundLight}, Dark={StaticResource BackgroundDark}}" />
+    </Style>
+
+    <Style x:Key="MainVertStack" TargetType="VerticalStackLayout">
+        <Setter Property="Spacing" Value="10" />
+        <Setter Property="Padding" Value="5,10" />
+        <Setter Property="VerticalOptions" Value="Start" />
+    </Style>
+
+    <Style x:Key="Block" TargetType="Border">
+        <Setter Property="Stroke" Value="Transparent" />
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource BlockLight}, Dark={StaticResource BlockDark}}" />
+        <Setter Property="StrokeShape">
+            <Setter.Value>
+                <RoundRectangle CornerRadius="10" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="BlockGrid" TargetType="Grid">
+        <Setter Property="Padding" Value="15,10,15,15" />
+    </Style>
+
+    <Style x:Key="BlockVertStack" TargetType="VerticalStackLayout">
+        <Setter Property="Spacing" Value="5" />
+    </Style>
+
+    <Style x:Key="PrimaryText" TargetType="Label">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource PrimaryTextLight}, Dark={StaticResource PrimaryTextDark}}" />
+    </Style>
+
+    <Style x:Key="SecondaryText" TargetType="Label">
+        <Setter Property="FontSize" Value="14" />        
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource SecondaryTextLight}, Dark={StaticResource SecondaryTextDark}}" />
+    </Style>
+
+    <Style x:Key="OnButton" TargetType="Button">
+        <Setter Property="WidthRequest" Value="55" />
+        <Setter Property="HeightRequest" Value="55" />
+        <Setter Property="CornerRadius" Value="30" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="Background" Value="Red" />
+        <Setter Property="BorderColor" Value="Transparent" />
+        <Setter Property="FontAttributes" Value="Bold" />
+    </Style>
+
+</ResourceDictionary>
