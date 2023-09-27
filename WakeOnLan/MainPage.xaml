@@ -6,7 +6,7 @@
              Style="{StaticResource Page}">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="+" />
+        <ToolbarItem Text="+" Clicked="AddDeviceClicked" />
     </ContentPage.ToolbarItems>
 
     <Grid x:Name="DevicesView">

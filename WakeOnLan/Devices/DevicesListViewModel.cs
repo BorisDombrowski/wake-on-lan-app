@@ -21,5 +21,15 @@ namespace WakeOnLan.Devices
             };
             
         }
+
+        public void AddDevice(Device device)
+        {
+            Devices.Add(device);
+        }
+
+        public void RemoveDevice(string guid)
+        {
+            Devices.Remove(Devices.First(x => x.Guid == guid));
+        }
     }
 }
