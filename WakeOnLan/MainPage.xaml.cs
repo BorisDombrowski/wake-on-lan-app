@@ -29,5 +29,12 @@ namespace WakeOnLan
                 devicesViewModel.AddDevice(device);
             }
         }
+
+        private void RemoveDeviceClicked(object sender, EventArgs e)
+        {
+            var item = sender as SwipeItem;
+            var device = item.BindingContext as WakeOnLan.Devices.Device;
+            devicesViewModel.RemoveDevice(device.Guid);
+        }
     }
 }

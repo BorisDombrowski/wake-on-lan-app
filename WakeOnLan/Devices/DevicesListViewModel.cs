@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using CommunityToolkit.Maui.Alerts;
+using System.Collections.ObjectModel;
 using System.Windows.Input;
 
 namespace WakeOnLan.Devices
@@ -29,7 +30,14 @@ namespace WakeOnLan.Devices
 
         public void RemoveDevice(string guid)
         {
-            Devices.Remove(Devices.First(x => x.Guid == guid));
+            try
+            {
+                Devices.Remove(Devices.First(x => x.Guid == guid));
+            }
+            catch 
+            { 
+                Toast.Make("Error on removing device").Show();
+            }
         }
     }
 }

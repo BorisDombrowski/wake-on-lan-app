@@ -6,7 +6,7 @@ namespace WakeOnLan;
 
 public partial class AddDevicePopup : Popup
 {
-    private string _macRegEx = "^(?:[0-9a-fA-F]{2}:){5}[0-9a-fA-F]{2}|(?:[0-9a-fA-F]{2}-){5}[0-9a-fA-F]{2}|(?:[0-9a-fA-F]{2}){5}[0-9a-fA-F]{2}$";
+    //private string _macRegEx = "^(?:[0-9a-fA-F]{2}:){5}[0-9a-fA-F]{2}|(?:[0-9a-fA-F]{2}-){5}[0-9a-fA-F]{2}|(?:[0-9a-fA-F]{2}){5}[0-9a-fA-F]{2}$";
 
     public AddDevicePopup()
 	{
@@ -27,8 +27,7 @@ public partial class AddDevicePopup : Popup
         //    return;
         //}
 
-        uint port;
-        var portParsed = uint.TryParse(PortEntry.Text, out port);
+        var portParsed = uint.TryParse(PortEntry.Text, out var port);
         //if(!portParsed || port < 1 || port > 65535)
         //{
         //    Toast.Make("Invalid port").Show();

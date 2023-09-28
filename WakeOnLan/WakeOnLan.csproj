@@ -63,10 +63,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Resources\Images\" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <Compile Update="AddDevicePopup.xaml.cs">
 	    <DependentUpon>AddDevicePopup.xaml</DependentUpon>
 	  </Compile>
