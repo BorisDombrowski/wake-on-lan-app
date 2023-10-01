@@ -46,6 +46,7 @@
         <Setter Property="FontSize" Value="18" />
         <Setter Property="FontAttributes" Value="Bold" />
         <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource PrimaryTextLight}, Dark={StaticResource PrimaryTextDark}}" />
+        <Setter Property="LineBreakMode" Value="TailTruncation" />
     </Style>
 
     <Style x:Key="SecondaryText" TargetType="Label">
@@ -61,6 +62,41 @@
         <Setter Property="Background" Value="Red" />
         <Setter Property="BorderColor" Value="Transparent" />
         <Setter Property="FontAttributes" Value="Bold" />
+    </Style>
+
+    <Style x:Key="DevicesView" TargetType="CollectionView">
+        <Setter Property="Margin" Value="5,10" />
+        <Setter Property="ItemsLayout">
+            <Setter.Value>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
+            </Setter.Value>    
+        </Setter>
+    </Style>
+
+    <Style x:Key="Entry" TargetType="Entry">
+        <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light={StaticResource PlaceholderTextLight}, Dark={StaticResource PlaceholderTextDark}}"/>
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource PrimaryTextLight}, Dark={StaticResource PrimaryTextDark}}" />
+    </Style>
+
+    <Style x:Key="PopupBlock" TargetType="Border">
+        <Setter Property="Stroke" Value="Transparent" />
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource BlockLight}, Dark={StaticResource BlockDark}}" />
+        <Setter Property="StrokeShape">
+            <Setter.Value>
+                <RoundRectangle CornerRadius="10" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Padding" Value="15,10,15,15"/>
+    </Style>
+
+    <Style x:Key="ConfirmButton" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Green" />
+        <Setter Property="TextColor" Value="White" />
+    </Style>
+
+    <Style x:Key="CancelButton" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Red" />
+        <Setter Property="TextColor" Value="White" />
     </Style>
 
 </ResourceDictionary>

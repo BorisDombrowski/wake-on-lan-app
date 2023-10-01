@@ -74,4 +74,6 @@
 	  </MauiXaml>
 	</ItemGroup>
 
+	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionWakeOnLanHideInfoBar="True" /></VisualStudio></ProjectExtensions>
+
 </Project>

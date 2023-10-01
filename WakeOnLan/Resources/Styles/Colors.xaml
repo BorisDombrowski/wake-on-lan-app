@@ -40,4 +40,10 @@
     <Color x:Key="SecondaryTextDark">#008080</Color>
     <SolidColorBrush x:Key="SecondaryTextDarkBrush" Color="{StaticResource SecondaryTextDark}" />
 
+    <Color x:Key="PlaceholderTextLight">#C1C1C1</Color>
+    <SolidColorBrush x:Key="PlaceholderTextLightBrush" Color="{StaticResource PlaceholderTextLight}" />
+
+    <Color x:Key="PlaceholderTextDark">#737373</Color>
+    <SolidColorBrush x:Key="PlaceholderTextDarkBrush" Color="{StaticResource PlaceholderTextDark}" />
+    
 </ResourceDictionary>

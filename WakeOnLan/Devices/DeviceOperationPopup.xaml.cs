@@ -1,22 +1,21 @@
 using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Maui.Views;
-using WakeOnLan.Devices;
 
 namespace WakeOnLan.Devices;
 
 public partial class DeviceOperationPopup : Popup
 {
-    private Devices.Device _currentDevice;
+    private Device _currentDevice;
 
     public DeviceOperationPopup()
 	{
 		InitializeComponent();
 
-        _currentDevice = new Devices.Device();
-        Content.BindingContext = _currentDevice;        
+        _currentDevice = new Device();
+        Content.BindingContext = _currentDevice;
 	}
 
-    public DeviceOperationPopup(Devices.Device device)
+    public DeviceOperationPopup(Device device)
     {
         if(device == null) 
         {
@@ -25,7 +24,7 @@ public partial class DeviceOperationPopup : Popup
 
         InitializeComponent();
 
-        _currentDevice = new Devices.Device(device.Guid)
+        _currentDevice = new Device(device.Guid)
         {
             Name = device.Name,
             IP = device.IP,
@@ -34,17 +33,9 @@ public partial class DeviceOperationPopup : Popup
         };
         Content.BindingContext = _currentDevice;        
     }
-	
-    private void MaskedEntryTextChanged(object sender, TextChangedEventArgs e)
-    {
-        var entry = sender as Entry;
-		entry.CursorPosition = entry.Text.Length;
-    }
 
     private void ConfirmClicked(object sender, EventArgs e)
     {
-        var a = NameEntry.Parent.BindingContext;
-
         if(!DeviceParamsValidator.IsValidName(_currentDevice.Name))
         {
             Toast.Make("Enter device name").Show();
@@ -77,5 +68,30 @@ public partial class DeviceOperationPopup : Popup
     private void CancelClicked(object sender, EventArgs e)
     {
         Close();
+    }
+
+    private void NameEntryTextChanged(object sender, TextChangedEventArgs e)
+    {
+        RestrictEntryLength(20, sender, e);
+    }
+
+    private void PortEntryTextChanged(object sender, TextChangedEventArgs e)
+    {
+        RestrictEntryLength(5, sender, e);
+    }
+
+    private void RestrictEntryLength(int maxSize, object sender, TextChangedEventArgs e)
+    {
+        if (e.NewTextValue.Length > maxSize)
+        {
+            var entry = sender as Entry;
+            entry.Text = e.OldTextValue;
+        }
+    }
+
+    private void MaskedEntryTextChanged(object sender, TextChangedEventArgs e)
+    {
+        var entry = sender as Entry;
+        entry.CursorPosition = entry.Text.Length;
     }
 }
