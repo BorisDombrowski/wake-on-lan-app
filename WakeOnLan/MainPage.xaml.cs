@@ -23,9 +23,7 @@ namespace WakeOnLan
 
         private void DeviceAddingEnded(object sender, CommunityToolkit.Maui.Core.PopupClosedEventArgs e)
         {
-            var device = e.Result as Devices.Device;
-
-            if (device != null)
+            if (e.Result is Devices.Device device)
             {
                 devicesViewModel.AddDevice(device);
             }
@@ -42,13 +40,11 @@ namespace WakeOnLan
         }
 
         private void DeviceEditingEnded(object sender, CommunityToolkit.Maui.Core.PopupClosedEventArgs e)
-        {            
-            var device = e.Result as Devices.Device;
-
-            if (device != null)
+        {
+            if (e.Result is Devices.Device device)
             {
                 devicesViewModel.UpdateDevice(device);
-            }            
+            }
         }
 
         private void RemoveDeviceClicked(object sender, EventArgs e)

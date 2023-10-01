@@ -5,7 +5,7 @@ namespace WakeOnLan.Devices;
 
 public partial class DeviceOperationPopup : Popup
 {
-    private Device _currentDevice;
+    private readonly Device _currentDevice;
 
     public DeviceOperationPopup()
 	{
@@ -80,7 +80,7 @@ public partial class DeviceOperationPopup : Popup
         RestrictEntryLength(5, sender, e);
     }
 
-    private void RestrictEntryLength(int maxSize, object sender, TextChangedEventArgs e)
+    private static void RestrictEntryLength(int maxSize, object sender, TextChangedEventArgs e)
     {
         if (e.NewTextValue.Length > maxSize)
         {

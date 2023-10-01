@@ -6,7 +6,7 @@ namespace WakeOnLan
 {
     public class WakeOnLanPackage
     {        
-        private byte[] _package;
+        private readonly byte[] _package;
 
         public WakeOnLanPackage(string mac) 
         {
