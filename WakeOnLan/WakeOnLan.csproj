@@ -63,13 +63,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="AddDevicePopup.xaml.cs">
-	    <DependentUpon>AddDevicePopup.xaml</DependentUpon>
+	  <Compile Update="Devices\DeviceOperationPopup.xaml.cs">
+	    <DependentUpon>DeviceOperationPopup.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="AddDevicePopup.xaml">
+	  <MauiXaml Update="Devices\DeviceOperationPopup.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

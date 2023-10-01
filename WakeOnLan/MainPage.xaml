@@ -21,7 +21,7 @@
 
                         <SwipeView.LeftItems>
                             <SwipeItem Text="Remove" IconImageSource="remove_icon.png" Clicked="RemoveDeviceClicked" />
-                            <SwipeItem Text="Edit" IconImageSource="edit_icon.png" />
+                            <SwipeItem Text="Edit" IconImageSource="edit_icon.png" Clicked="EditDeviceClicked"/>
                         </SwipeView.LeftItems>
                         
                         <Border Style="{StaticResource Block}">
@@ -39,7 +39,7 @@
                                     <Label Text="{Binding MAC}" HorizontalOptions="Start" Style="{StaticResource SecondaryText}" />
                                 </VerticalStackLayout>
 
-                                <Button Text="ON" HorizontalOptions="End" Grid.Column="1" Style="{StaticResource OnButton}"/>
+                                <Button Text="ON" HorizontalOptions="End" Grid.Column="1" Style="{StaticResource OnButton}" Clicked="DeviceOnClicked"/>
 
                             </Grid>
                         </Border>
