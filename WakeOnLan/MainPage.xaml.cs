@@ -1,5 +1,6 @@
 ﻿using WakeOnLan.Devices;
 using CommunityToolkit.Maui.Views;
+using CommunityToolkit.Maui.Alerts;
 
 namespace WakeOnLan
 {
@@ -59,7 +60,21 @@ namespace WakeOnLan
 
         private void DeviceOnClicked(object sender, EventArgs e)
         {
+            var item = sender as Button;
+            var device = item.BindingContext as Devices.Device;
 
+            try
+            {
+                var pkg = new WakeOnLanPackage(device.MAC);
+                pkg.Send(device.IP, device.Port);
+            }
+            catch
+            {
+                Toast.Make("Error during sending package").Show();
+                return;
+            }
+
+            Toast.Make("Package has been sended").Show();
         }
     }
 }
