@@ -6,10 +6,13 @@ namespace WakeOnLan
 {
     public partial class MainPage : ContentPage
     {
-        private readonly DevicesListViewModel devicesViewModel = new();
+        private readonly DevicesListViewModel devicesViewModel;
 
         public MainPage()
         {
+            var devicesStorage = new DevicesStorage();
+            devicesViewModel = new(devicesStorage);
+
             InitializeComponent();
             DevicesView.BindingContext = devicesViewModel;
         }

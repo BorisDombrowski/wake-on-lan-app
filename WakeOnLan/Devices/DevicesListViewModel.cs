@@ -7,24 +7,18 @@ namespace WakeOnLan.Devices
     public class DevicesListViewModel
     {
         public ObservableCollection<Device> Devices { get; private set; }
+        private readonly DevicesStorage _devicesStorage;
 
-        public ICommand AddCommand { get; private set; }
-        public ICommand RemoveCommand { get; private set; }
-        public ICommand EditCommand { get; private set; }
-
-        public DevicesListViewModel()
+        public DevicesListViewModel(DevicesStorage devicesStorage)
         {
-            Devices = new ObservableCollection<Device>()
-            {
-                new Device() {Name="qwerty", IP="192.168.100.125", Port=54, MAC="41:45:98:ac:45:df"},
-                new Device() {Name="zxcvbn", IP="192.168.100.126", Port=152, MAC="41:45:98:ac:45:d4"},
-                new Device() {Name="asdfgh", IP="192.168.100.127", Port=1455, MAC="41:45:98:ac:45:74"}
-            };            
+            _devicesStorage = devicesStorage;
+            Devices = _devicesStorage.LoadDevices();
         }
 
         public void AddDevice(Device device)
         {
             Devices.Add(device);
+            _devicesStorage.SaveDevice(device);
         }
 
         public void RemoveDevice(string guid)
@@ -32,6 +26,7 @@ namespace WakeOnLan.Devices
             try
             {
                 Devices.Remove(Devices.First(x => x.Guid == guid));
+                _devicesStorage.RemoveDevice(guid);
             }
             catch 
             { 
@@ -48,6 +43,8 @@ namespace WakeOnLan.Devices
                 updDevice.IP = device.IP;
                 updDevice.Port = device.Port;
                 updDevice.MAC = device.MAC;
+
+                _devicesStorage.SaveDevice(updDevice);
             }
             catch
             {

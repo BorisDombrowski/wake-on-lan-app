@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Text.Json.Serialization;
 
 namespace WakeOnLan.Devices
 {
@@ -58,6 +59,7 @@ namespace WakeOnLan.Devices
             Guid = System.Guid.NewGuid().ToString();
         }
 
+        [JsonConstructor]
         public Device(string guid)
         {
             Guid = guid;
